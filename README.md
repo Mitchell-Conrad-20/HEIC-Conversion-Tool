@@ -10,7 +10,7 @@
    Note: File extensions must be ".heic" or ".HEIC". Files with mixed case extensions will be ignored.
    
 ### Video Guide
-[![User Guide Video Tutorial]({https://i.ytimg.com/vi/fs0zZ2S1hls/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1FAvKfY7B5QGpbXFcfPdLlmJu4A})]({https://www.youtube.com/watch?v=fs0zZ2S1hls} "User Guide Video Tutorial")
+[![User Guide Video Tutorial](https://i.ytimg.com/vi/fs0zZ2S1hls/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1FAvKfY7B5QGpbXFcfPdLlmJu4A)](https://www.youtube.com/watch?v=fs0zZ2S1hls "User Guide Video Tutorial")
 
 ## Usage
 ### Source File
