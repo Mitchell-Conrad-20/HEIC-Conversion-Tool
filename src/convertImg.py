@@ -3,7 +3,6 @@ from pillow_heif import register_heif_opener
 import os
 from tkinter import *
 from tkinter.filedialog import askdirectory
-import time
 
 ########## Globals ##########
 source = ""
@@ -41,7 +40,7 @@ def checkSourceDestination():
         
     return True
     
-def convertToJPG():
+def convert(fileExtension):
     global messageText
 
     # Ensure the user selected a source and destination first  
@@ -53,9 +52,9 @@ def convertToJPG():
     
     converted = 0
     
-    # Convert all HEIC files in the folder to JPG
+    # Convert all HEIC files in the folder to the selected filetype
     for doc in documents:
-        if doc.endswith(".heic"):
+        if(doc.endswith(".HEIC") or doc.endswith(".heic")):
             messageText.set("Converting " + doc)
             window.update()
             
@@ -68,47 +67,11 @@ def convertToJPG():
                 return
             
             try:
-                image.convert('RGB').save(destination + "\\" + doc[:-4] + "jpg")
+                image.convert('RGB').save(destination + "\\" + doc[:-4] + fileExtension)
             except:
-                messageText.set("Error: Failed to save " + doc)
+                messageText.set("Error: Failed to save " + doc[:-4] + fileExtension)
                 return
             
-            converted += 1
-            
-    messageText.set("Conversion Complete! Converted " + str(converted) + " images!")
-    
-def convertToPNG():
-    global messageText
-
-    # Ensure the user selected a source and destination first  
-    if(not checkSourceDestination()):
-        return
-
-    # Create a list of all documents in the source folder
-    documents = os.listdir(source)
-
-    converted = 0
-
-    # Convert all HEIC files in the folder to JPG
-    for doc in documents:
-        if doc.endswith(".heic"):
-            messageText.set("Converting " + doc)
-            window.update()
-            
-            path = source + "\\" + doc
-            
-            try:
-                image = PIL.Image.open(path)
-            except:
-                messageText.set("Error: Failed to open " + doc)
-                return
-            
-            try:
-                image.convert('RGB').save(destination + "\\" + doc[:-4] + "png")
-            except:
-                messageText.set("Error: Failed to save " + doc)
-                return
-                
             converted += 1
             
     messageText.set("Conversion Complete! Converted " + str(converted) + " images!")
@@ -141,10 +104,10 @@ destinationText.set("Destination: None")
 currentDestination = Label(textvariable=destinationText, font=("Helvetica 10"))
 currentDestination.pack(pady=10)
 
-runConvertToJPG = Button(text="Convert to JPG", font="Helvetica 10", command=convertToJPG)
+runConvertToJPG = Button(text="Convert to JPG", font="Helvetica 10", command=lambda: convert("jpg"))
 runConvertToJPG.pack(pady=10)
 
-runConvertToJPG = Button(text="Convert to PNG", font="Helvetica 10", command=convertToPNG)
+runConvertToJPG = Button(text="Convert to PNG", font="Helvetica 10", command=lambda: convert("png"))
 runConvertToJPG.pack(pady=10)
 
 messageText = StringVar()
