@@ -1,6 +1,8 @@
 # HEIC-Conversion-Tool
  TKinter GUI based HEIC to JPG and PNG conversion tool
 
+ ![HEIC-Conversion-Tool-Graphic](https://github.com/Mitchell-Conrad-20/HEIC-Conversion-Tool/assets/10098947/d33f2112-eee7-4fb5-955d-f657a526070c)
+
 ## User Guide
 1. Run executable or python source file.
 2. Click select source folder. Select a folder containing HEIC images.
