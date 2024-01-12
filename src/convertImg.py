@@ -54,7 +54,7 @@ def convert(fileExtension):
     
     # Convert all HEIC files in the folder to the selected filetype
     for doc in documents:
-        if(doc.endswith(".HEIC") or doc.endswith(".heic")):
+        if(doc.upper().endswith(".HEIC")):
             messageText.set("Converting " + doc)
             window.update()
             

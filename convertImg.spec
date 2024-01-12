@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['src\\convertImg.py'],
+    ['convertImg.py'],
     pathex=[],
     binaries=[],
     datas=[],
